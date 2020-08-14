@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>vue.extend</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+
+<body>
+    <h1>vue.extend 扩展实例构造器</h1>
+    <hr>
+    <div id="author"></div>
+    <author></author>
+
+    <script type="text/javascript">
+        var authorExtend = Vue.extend({
+            template: "<p><a :href='authorURL'>{{authorName}}</a></p>",
+            data: function () {
+                return {
+                    authorName: "jsPang",
+                    authorURL: "https://jspang.com"
+                }
+            }
+        });
+        new authorExtend().$mount("#author");
+        new authorExtend().$mount("author");
+    </script>
+</body>
+
+</html>
